@@ -65,7 +65,7 @@ namespace Gramma.Serialization.Testing
 		[TestMethod]
 		public void SerializaAndDeserializeAllObjectTypes()
 		{
-			var serializedObject = BuildAlbumArray();
+			INamedEntity[] serializedObject = BuildAlbumArray();
 
 			var formatter = new FastBinaryFormatter();
 
@@ -81,9 +81,9 @@ namespace Gramma.Serialization.Testing
 
 				stream.Seek(0, SeekOrigin.Begin);
 
-				var deserializedObject = (Album[])formatter.Deserialize(stream);
+				var deserializedObject = (INamedEntity[])formatter.Deserialize(stream);
 
-				foreach (var album in deserializedObject)
+				foreach (Album album in deserializedObject)
 				{
 					var albumGenre = album.Genre;
 
@@ -95,7 +95,6 @@ namespace Gramma.Serialization.Testing
 					Assert.AreEqual(album.Edition.MajorNumber, 1);
 				}
 			}
-			
 		}
 
 		[TestMethod]
@@ -112,7 +111,7 @@ namespace Gramma.Serialization.Testing
 			}
 		}
 
-		private Album[] BuildAlbumArray()
+		private INamedEntity[] BuildAlbumArray()
 		{
 			var albums = new List<Album>();
 
@@ -127,16 +126,28 @@ namespace Gramma.Serialization.Testing
 
 			var edition = new Edition { MajorNumber = 1, MinorNumber = 0 };
 
-			var grammophoneAlbum = new Album(grammophoneArtist, Genre.Get("electronic"), grammophoneSongs, Packaging.Download, edition);
+			var grammophoneAlbum = new Album(
+				"coffee for the farmer",
+				grammophoneArtist,
+				Genre.Get("electronic"),
+				grammophoneSongs,
+				Packaging.Download,
+				edition);
 
 			var lostDogSongs = new List<Song>();
 
 			lostDogSongs.Add(new Song("Idleness", lostDogArtist, Genre.Get("electronic")));
 			lostDogSongs.Add(new Song("Catch a bone", lostDogArtist, Genre.Get("pop")));
 
-			var lostDogAlbum = new Album(lostDogArtist, Genre.Get("pop"), lostDogSongs, Packaging.CDOrDownload, edition);
+			var lostDogAlbum = new Album(
+				"my debut",
+				lostDogArtist,
+				Genre.Get("pop"),
+				lostDogSongs,
+				Packaging.CDOrDownload,
+				edition);
 
-			return new Album[] { grammophoneAlbum, lostDogAlbum };
+			return new INamedEntity[] { grammophoneAlbum, lostDogAlbum };
 		}
 
 	}

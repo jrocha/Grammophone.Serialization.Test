@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Gramma.Serialization.Testing.MusicModel
+namespace Grammophone.Serialization.Testing.MusicModel
 {
 	[Serializable]
 	public class GenreSerializationSurrogate : ISerializationSurrogate

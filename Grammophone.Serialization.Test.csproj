@@ -9,8 +9,8 @@
     <ProjectGuid>{6F0658C5-162B-4FA1-BB2E-C93392360117}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gramma.Serialization.Testing</RootNamespace>
-    <AssemblyName>Gramma.Serialization.Testing</AssemblyName>
+    <RootNamespace>Grammophone.Serialization.Testing</RootNamespace>
+    <AssemblyName>Grammophone.Serialization.Testing</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -68,9 +68,9 @@
     <Compile Include="SerializationUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gramma.Serialization\Gramma.Serialization.csproj">
+    <ProjectReference Include="..\Grammophone.Serialization\Grammophone.Serialization.csproj">
       <Project>{B0E855CB-8A43-4623-8184-31CD4B4EBB57}</Project>
-      <Name>Gramma.Serialization</Name>
+      <Name>Grammophone.Serialization</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

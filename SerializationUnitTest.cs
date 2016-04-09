@@ -3,11 +3,11 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Gramma.Serialization.Testing.MusicModel;
+using Grammophone.Serialization.Testing.MusicModel;
 using System.IO;
 using System.Runtime.Serialization;
 
-namespace Gramma.Serialization.Testing
+namespace Grammophone.Serialization.Testing
 {
 	/// <summary>
 	/// Summary description for UnitTest1

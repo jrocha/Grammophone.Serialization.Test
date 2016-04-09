@@ -1,5 +1,5 @@
-# Gramma.Serialization.Test
-This library provides unit testing for library [Gramma.Serialization](https://github.com/grammophone/Gramma.Serialization).
+# Grammophone.Serialization.Test
+This library provides unit testing for library [Grammophone.Serialization](https://github.com/grammophone/Grammophone.Serialization).
 
-The project depends on [Gramma.Serialization](https://github.com/grammophone/Gramma.Serialization) residing in a sibling directory.
+The project depends on [Grammophone.Serialization](https://github.com/grammophone/Grammophone.Serialization) residing in a sibling directory.
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gramma.Serialization.Testing.MusicModel
+namespace Grammophone.Serialization.Testing.MusicModel
 {
 	[Serializable]
 	public class Artist : INamedEntity

@@ -82,8 +82,9 @@ namespace Grammophone.Serialization.Testing
 				stream.Seek(0, SeekOrigin.Begin);
 
 				var deserializedObject = (INamedEntity[])formatter.Deserialize(stream);
+                Assert.AreEqual(stream.Position, stream.Length);
 
-				foreach (Album album in deserializedObject)
+                foreach (Album album in deserializedObject)
 				{
 					var albumGenre = album.Genre;
 
@@ -96,15 +97,12 @@ namespace Grammophone.Serialization.Testing
                     Assert.AreEqual(album.Edition.ReleaseDate, new DateTime(2017,11, 06));
                 }
             }
-		}
-
-
+        }
 
         [TestMethod]
         public void TestDateTime() {
             var now = DateTime.Now;
             var formatter = new FastBinaryFormatter();
-
 
             using (var stream = new MemoryStream()) {
                 formatter.Serialize(stream, now);
@@ -112,10 +110,9 @@ namespace Grammophone.Serialization.Testing
                 var deserializedObject = (DateTime) formatter.Deserialize(stream);
 
                 Assert.AreEqual(deserializedObject, now);
+                Assert.AreEqual(stream.Position, stream.Length);
             }
         }
-
-
 
         [TestMethod]
 		[ExpectedException(typeof(SerializationException))]
